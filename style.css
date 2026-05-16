@@ -1,0 +1,391 @@
+/* sitepro/style.css */
+
+:root {
+    /* Palette Chromatique Sophistiquée : Obsidian & Gold Dust */
+    --bg-deep: #0a0b10;
+    --bg-surface: #14161f;
+    --text-primary: #e2e4e9;
+    --text-secondary: #9499a6;
+
+    /* Accents Tech Futuriste (Pas de couleurs standard) */
+    --accent-core: #c5a059;
+    /* Or brossé / Champagne */
+    --accent-glow: rgba(197, 160, 89, 0.15);
+    --accent-gradient: linear-gradient(135deg, #c5a059 0%, #8e6d31 100%);
+    --tech-cyan: #c5a059;
+    --tech-gradient: linear-gradient(135deg, #c5a059 0%, #8e6d31 100%);
+
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --glass-effect: rgba(20, 22, 31, 0.7);
+
+    --container-width: 1200px;
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+/* Navbar Ultra-Premium */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    background: var(--glass-effect);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.logo {
+    color: var(--accent-core);
+    margin-left: 2px;
+    text-decoration: none;
+
+}
+
+nav ul {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+nav ul li a:hover {
+    color: var(--accent-core);
+}
+
+.btn-nav {
+    padding: 0.7rem 1.5rem;
+    border: 1px solid var(--accent-core);
+    border-radius: 2px;
+    color: var(--accent-core) !important;
+    text-transform: uppercase;
+}
+
+.btn-nav:hover {
+    background: var(--accent-core);
+    color: var(--bg-deep) !important;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 90px;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 80% 20%, var(--accent-glow) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(0, 242, 255, 0.05) 0%, transparent 40%);
+    z-index: -1;
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.5;
+    letter-spacing: -3px;
+    margin-bottom: 2rem;
+}
+
+.hero-content h1 span {
+    display: block;
+    background: var(--tech-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 550px;
+    margin-bottom: 3rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 2rem;
+}
+
+.btn {
+    padding: 1.2rem 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    font-size: 0.8rem;
+}
+
+.btn-primary {
+    background: var(--accent-gradient);
+    color: var(--bg-deep);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(197, 160, 89, 0.2);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background: var(--border-subtle);
+}
+
+/* Services Section */
+.services {
+    padding: 150px 0;
+    background: var(--bg-surface);
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 5rem;
+    letter-spacing: -1px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.card {
+    background: var(--bg-deep);
+    padding: 4rem 3rem;
+    border: 1px solid var(--border-subtle);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.card:hover {
+    border-color: var(--accent-core);
+    transform: scale(1.02);
+}
+
+/* ICÔNES ABSTRAITES EN CSS PUR (Interdiction du générique) */
+.card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+/* Icone Architecture : Cubes isométriques abstraits */
+.icon-architecture::before,
+.icon-architecture::after {
+    content: '';
+    position: absolute;
+    border: 2px solid var(--accent-core);
+}
+
+.icon-architecture::before {
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+}
+
+.icon-architecture::after {
+    width: 30px;
+    height: 30px;
+    bottom: 0;
+    right: 0;
+    background: var(--accent-gradient);
+}
+
+/* Icone Design : Formes fluides superposées */
+.icon-design::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    background: var(--tech-gradient);
+    filter: blur(8px);
+    opacity: 0.6;
+}
+
+.icon-design::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--text-primary);
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+}
+
+/* Icone AI : Réseau de points connectés */
+.icon-ai {
+    background: radial-gradient(circle, var(--tech-cyan) 2px, transparent 2px);
+    background-size: 15px 15px;
+}
+
+.icon-ai::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--tech-gradient);
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Footer Minimaliste */
+.footer {
+    padding: 100px 0 50px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.socials a {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.socials a:hover {
+    color: var(--accent-core);
+}
+
+/* Animations Avancées */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-up {
+    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+}
